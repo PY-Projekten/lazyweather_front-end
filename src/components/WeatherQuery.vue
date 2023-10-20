@@ -65,9 +65,10 @@ export default {
   },
   methods: {
     async submitForm() {
+        console.log("form data:", this.location, this.date, this.hour);
         try {
             // Define the URL of your Django backend endpoint
-            const url = 'http://127.0.0.1:8000/weather/query/';
+            const url = 'http://127.0.0.1:8000/api/v1/weather_query/';
             
             // Define the data to be sent in the POST request
             const postData = {
@@ -78,6 +79,7 @@ export default {
             
             // Make a POST request to the Django backend
             const response = await axios.post(url, postData);
+            console.log("Response from backend", response);
             
             // Check if the response indicates success
             if (response.data.success) {
