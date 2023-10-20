@@ -7,7 +7,7 @@
         <label for="location">Location:</label>
         <input list="locations" v-model="location" />
         <datalist id="locations">
-          <option v-for="loc in locationsList" :key="loc" :value="loc" />
+          <option v-for="loc in locationsList" :key="loc" :value="loc"></option>
         </datalist>
       </div>
 
